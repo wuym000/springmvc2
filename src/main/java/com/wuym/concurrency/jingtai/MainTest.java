@@ -8,6 +8,7 @@ public class MainTest implements Runnable {
         }
         for(Thread thread : threads){
             thread.start();
+
         }
 
         //TODO
