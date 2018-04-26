@@ -10,6 +10,7 @@ public class MainTest implements Runnable {
             thread.start();
         }
 
+        //TODO
         /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
