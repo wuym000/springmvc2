@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paying....</title>
+</head>
+<body>
+<button class="button" onclick="onBridgeReady()" style="width: 40px;height: 40px">支付</button>
+</body>
+<script type="text/javascript">
+    function onBridgeReady(){
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest', {
+                "timeStamp": "1525683128",
+                "package": "prepay_id=wx07165208408230eabcdc7ff63155621604",
+                "paySign": "4C0957EB56361CD907D2455A34006FF1",
+                "appId": "wxead7449448d6dbfa",
+                "signType": "MD5",
+                "nonceStr": "3b65c3132f8c46ef"
+            },
+            function(res){
+                if(res.err_msg == "get_brand_wcpay_request:ok" ) {}     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+            }
+        );
+    }
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    }else{
+        onBridgeReady();
+    }
+
+</script>
+</html>

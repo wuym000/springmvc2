@@ -84,10 +84,13 @@ public class Test {
 
        /* Classinfo c = s;
         System.out.println(c.getClass().getSimpleName());*/
-       Pattern pattern = Pattern.compile("^((2[5-9])|30)\\d{14,22}$");
+       /*Pattern pattern = Pattern.compile("^((2[5-9])|30)\\d{14,22}$");
        Pattern pattern1 = Pattern.compile("^(1[0-5])\\d{16}");
       //  System.out.println(pattern.matcher("305724205885572445").matches());
-        System.out.println(pattern1.matcher("120061098828009406").matches());
+        System.out.println(pattern1.matcher("120061098828009406").matches());*/
+       SubClassinfo sb = new SubClassinfo();
+       System.out.println(sb.isClass() );
+       System.out.println(sb.getMusicList());
     }
 
     //获取包括父类的所有属性

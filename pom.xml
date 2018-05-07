@@ -258,6 +258,24 @@
             <artifactId>ehcache-core</artifactId>
             <version>2.6.11</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.payment</groupId>
+            <artifactId>util</artifactId>
+            <version>2.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zhiweicloud.guest</groupId>
+            <artifactId>guest-util</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
         <!--<dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
