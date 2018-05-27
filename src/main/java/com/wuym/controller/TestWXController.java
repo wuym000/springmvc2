@@ -1,5 +1,8 @@
 package com.wuym.controller;
 
+import com.payment.api.config.DefaultPaymentSDKClient;
+import com.payment.api.request.PaymentGeneralRefundRequest;
+import com.payment.api.response.PaymentGeneralRefundResponse;
 import com.wuym.cache.CacheUtil;
 import com.wuym.model.WeChat;
 import com.wuym.util.WxUtil;
@@ -229,6 +232,18 @@ public class TestWXController {
     @RequestMapping(value = "/notifyUrl")
     public Map notifyUrl(){
         return null;
+    }
+
+    @ResponseBody
+    @RequestMapping("/refund")
+    public Map<String ,Object> refund(String no, String appname){
+        PaymentGeneralRefundRequest request= new PaymentGeneralRefundRequest();
+        request.setOutTradeNo(no);
+        DefaultPaymentSDKClient sdkClient = new DefaultPaymentSDKClient(appname, "bYTMptU4BJ4zkQJ6", "https://catering.gateway.iairportcloud.com");
+        PaymentGeneralRefundResponse response = sdkClient.excute(request);
+        return JSONObject.fromObject(response);
+
+
     }
     @ResponseBody
     @RequestMapping(value = "/getAccessToken")
