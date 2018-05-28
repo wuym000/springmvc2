@@ -45,6 +45,8 @@ import java.util.Map;
  */
 @Controller
 public class GoController implements EnvironmentAware{
+
+
     private final Log logger = LogFactory.getLog(GoController.class);
     @Autowired
     private SgtPeppers cd;
