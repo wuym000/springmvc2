@@ -157,6 +157,7 @@ public class GoController implements EnvironmentAware{
         PaymentSDKClient client = new DefaultPaymentSDKClient("NATIVE", "bYTMptU4BJ4zkQJ6", "https://wx.funnycode.cn");
         PaymentWxOrderRequest request = new PaymentWxOrderRequest();
         request.setBody("测试微信扫码订单");
+
         request.setOutTradeNo(body);
         request.setTotalFee(1);
         request.setSpbillCreateIp("127.0.0.1");
